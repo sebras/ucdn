@@ -297,13 +297,20 @@ static const TestTuple script_tests[] =
     { 0x18B00, UCDN_SCRIPT_KHITAN_SMALL_SCRIPT },
     { 0x10E80, UCDN_SCRIPT_YEZIDI },
 
+    /* Unicode-14.0 additions */
+    { 0x12F90, UCDN_SCRIPT_CYPRO_MINOAN },
+    { 0x10F70, UCDN_SCRIPT_OLD_UYGHUR },
+    { 0x16A70, UCDN_SCRIPT_TANGSA },
+    { 0x1E290, UCDN_SCRIPT_TOTO },
+    { 0x10570, UCDN_SCRIPT_VITHKUQI },
+
     { 0x111111, UCDN_SCRIPT_UNKNOWN }
 };
 
 START_TEST(test_basic)
 {
     /* check versio */
-    ck_assert_str_eq(ucdn_get_unicode_version(), "13.0.0");
+    ck_assert_str_eq(ucdn_get_unicode_version(), "14.0.0");
 
     /* one sample check inside BMP for each property */
     ck_assert_int_eq(ucdn_get_general_category(0x0040), 21);
