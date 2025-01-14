@@ -314,7 +314,7 @@ static const TestTuple script_tests[] =
 START_TEST(test_basic)
 {
     /* check versio */
-    ck_assert_str_eq(ucdn_get_unicode_version(), "15.0.0");
+    ck_assert_str_eq(ucdn_get_unicode_version(), "16.0.0");
 
     /* one sample check inside BMP for each property */
     ck_assert_int_eq(ucdn_get_general_category(0x0040), 21);
@@ -539,7 +539,7 @@ START_TEST(test_resolved_linebreak_class)
     /* cases that resolve to CM/AL */
     ck_assert_int_eq(ucdn_get_resolved_linebreak_class(0x0e31), UCDN_LINEBREAK_CLASS_CM); /* category MN */
     ck_assert_int_eq(ucdn_get_resolved_linebreak_class(0x1a55), UCDN_LINEBREAK_CLASS_CM); /* category MC */
-    ck_assert_int_eq(ucdn_get_resolved_linebreak_class(0x19da), UCDN_LINEBREAK_CLASS_AL); /* other category */
+    ck_assert_int_eq(ucdn_get_resolved_linebreak_class(0x19de), UCDN_LINEBREAK_CLASS_AL); /* other category */
 
     /* cases that resolve to NS */
     ck_assert_int_eq(ucdn_get_resolved_linebreak_class(0x3041), UCDN_LINEBREAK_CLASS_NS); /* CJ */
