@@ -35,7 +35,7 @@ SCRIPT = sys.argv[0]
 VERSION = "3.2"
 
 # The Unicode Database
-UNIDATA_VERSION = "15.0.0"
+UNIDATA_VERSION = "16.0.0"
 UNICODE_DATA = "UnicodeData%s.txt"
 COMPOSITION_EXCLUSIONS = "CompositionExclusions%s.txt"
 EASTASIAN_WIDTH = "EastAsianWidth%s.txt"
@@ -100,7 +100,8 @@ SCRIPT_NAMES = [ "Common", "Latin", "Greek", "Cyrillic", "Armenian",
     "Medefaidrin", "Old_Sogdian", "Sogdian", "Elymaic", "Nandinagari",
     "Nyiakeng_Puachue_Hmong", "Wancho", "Chorasmian", "Dives_Akuru",
     "Khitan_Small_Script", "Yezidi", "Vithkuqi", "Old_Uyghur", "Cypro_Minoan",
-    "Tangsa", "Toto", "Kawi", "Nag_Mundari"
+    "Tangsa", "Toto", "Kawi", "Nag_Mundari", "Todhri", "Garay",
+    "Tulu_Tigalari", "Sunuwar", "Gurung_Khema", "Kirat_Rai", "Ol_Onal"
     ]
 
 EASTASIANWIDTH_NAMES = [ "F", "H", "W", "Na", "A", "N" ]
@@ -1098,7 +1099,7 @@ class UnicodeData:
                     continue
                 if s[0] == '#':
                     continue
-                s = s.split()[0].split(';')
+                s = "".join(s.split()).split('#')[0].split(';')
                 if '..' in s[0]:
                     first, last = [int(c, 16) for c in s[0].split('..')]
                     chars = list(range(first, last+1))
@@ -1121,7 +1122,9 @@ class UnicodeData:
                 if not s:
                     continue
 
-                r, p = s.split(";")
+                s = s.split(";")
+                r = s[0]
+                p = s[-1]
                 r = r.strip()
                 p = p.strip()
                 if ".." in r:
