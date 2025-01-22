@@ -371,6 +371,9 @@ def makeunicodedata(unicode, trace):
     for name in SCRIPT_NAMES:
         print("    HB_SCRIPT_%s," % name.upper(), file=fp)
     """
+    for name in LINEBREAK_CLASSES:
+        print("#define UCDN_LINEBREAK_CLASS_%s %d" % (name.upper(), LINEBREAK_CLASSES.index(name)), file=fp)
+    print(file=fp)
 
     for name in CATEGORY_NAMES:
         print("#define UCDN_GENERAL_CATEGORY_%s %d" % (name.upper(), CATEGORY_NAMES.index(name)), file=fp)
