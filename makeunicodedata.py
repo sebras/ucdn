@@ -111,9 +111,9 @@ MANDATORY_LINE_BREAKS = [ "BK", "CR", "LF", "NL" ]
 LINEBREAK_CLASSES = [ "OP", "CL", "CP", "QU", "GL", "NS", "EX", "SY",
     "IS", "PR", "PO", "NU", "AL", "HL", "ID", "IN", "HY", "BA", "BB",
     "B2", "ZW", "CM", "WJ", "H2", "H3", "JL", "JV", "JT", "RI",
+    "EB", "EM", "ZWJ",
     # end of pair table
-    "AI", "BK", "CB", "CJ", "CR", "LF", "NL", "SA", "SG", "SP", "XX",
-    "ZWJ", "EB", "EM"
+    "AI", "BK", "CB", "CJ", "CR", "LF", "NL", "SA", "SG", "SP", "XX"
     ]
 
 BIDI_PAIRED_BRACKET_TYPES = [ "o", "c", "n"]
